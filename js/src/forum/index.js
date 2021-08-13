@@ -5,7 +5,6 @@ import classList from 'flarum/common/utils/classList';
 import DiscussionComposer from 'flarum/forum/components/DiscussionComposer';
 
 app.initializers.add('tpam/flarum-match', () => {
-  export default () => {
     extend(DiscussionComposer.prototype, 'headerItems', function (items) {
       items.add(
         'polls',
@@ -17,5 +16,4 @@ app.initializers.add('tpam/flarum-match', () => {
         2
         );
     });
-  }
 });
