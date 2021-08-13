@@ -91,7 +91,7 @@ module.exports =
 /*!******************!*\
   !*** ./forum.js ***!
   \******************/
-/*! no static exports found */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -123,12 +123,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('tpam/flarum-match', function () {
+  flarum_forum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_3___default.a.prototype.addPoll = function () {
+    var _this = this;
+
+    flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.modal.show(CreatePollModal, {
+      poll: this.poll,
+      onsubmit: function onsubmit(poll) {
+        return _this.poll = poll;
+      }
+    });
+  };
+
   Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_forum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_3___default.a.prototype, 'headerItems', function (items) {
-    items.add('polls', m("a", {
+    items.add('match', m("a", {
       className: "DiscussionComposer-match",
       onclick: console.log('a')
     }, m("span", {
-      className: flarum_common_utils_classList__WEBPACK_IMPORTED_MODULE_2___default()('PollLabel', !this.poll && 'none')
+      className: flarum_common_utils_classList__WEBPACK_IMPORTED_MODULE_2___default()('MatchLabel', !this.poll && 'none')
     }, '发起拼车匹配')), 2);
   });
 });
