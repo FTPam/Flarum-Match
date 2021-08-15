@@ -31,7 +31,7 @@ app.initializers.add('tpam/flarum-match', () => {
   extend(TextEditor.prototype, 'toolbarItems', function(items) {
     items.add('mention', (
       <TextEditorButton onclick={() => this.attrs.composer.editor.insertAtCursor(' test')} icon="fas fa-at">
-        {app.translator.trans('flarum-mentions.forum.composer.mention_tooltip')}
+        {'test'}
       </TextEditorButton>
     ));
   })
