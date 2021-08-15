@@ -236,7 +236,25 @@ var CreateMatchModal = /*#__PURE__*/function (_Modal) {
       className: "label"
     }, '最长可等待 [单位：分钟,只填数字,最多720]'), m("input", {
       type: "text",
-      label: "\u8BBA\u575B\u63CF\u8FF0",
+      "class": "FormControl"
+    })), m("div", {
+      className: "Form-group"
+    }, m("label", {
+      className: "label"
+    }, '以下信息为非必填项'), m("label", {
+      className: "label"
+    }, '你的性别'), m("span", {
+      "class": "select"
+    }, m("select", {
+      "class": "Select-input FormControl"
+    }, m("option", {
+      value: "boy"
+    }, "\u7537"), m("option", {
+      value: "girl"
+    }, "\u5973"))), m("label", {
+      className: "label"
+    }, '你的学院'), m("input", {
+      type: "text",
       "class": "FormControl"
     })), m("div", {
       className: "Form-group"

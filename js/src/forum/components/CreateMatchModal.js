@@ -47,7 +47,20 @@ export default class CreateMatchModal extends Modal {
               </select>
             </span>
             <label className="label">{'最长可等待 [单位：分钟,只填数字,最多720]'}</label>
-            <input type="text" label="论坛描述" class="FormControl" ></input>
+            <input type="text" class="FormControl" ></input>
+          </div>
+
+          <div className="Form-group">
+            <label className="label">{'以下信息为非必填项'}</label>
+            <label className="label">{'你的性别'}</label>
+            <span class='select'>
+              <select class="Select-input FormControl">
+                <option value='boy'>男</option>
+                <option value='girl'>女</option>
+              </select>
+            </span>
+            <label className="label">{'你的学院'}</label>
+            <input type="text" class="FormControl" ></input>
           </div>
 
           <div className="Form-group">
