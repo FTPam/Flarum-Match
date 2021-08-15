@@ -169,18 +169,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var CurrentDate = dayjs().format('YYYY-MM-DD');
+var CurrentTime = dayjs().format('HH:mm');
 
 var CreateMatchModal = /*#__PURE__*/function (_Modal) {
   Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(CreateMatchModal, _Modal);
 
   function CreateMatchModal() {
-    return _Modal.apply(this, arguments) || this;
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _Modal.call.apply(_Modal, [this].concat(args)) || this;
+    _this.loading = false;
+    _this.date = void 0;
+    _this.time = void 0;
+    return _this;
   }
 
   var _proto = CreateMatchModal.prototype;
 
   _proto.oninit = function oninit(vnode) {
     _Modal.prototype.oninit.call(this, vnode);
+
+    this.date = CurrentDate;
+    this.time = CurrentTime;
   };
 
   _proto.title = function title() {
@@ -233,11 +248,29 @@ var CreateMatchModal = /*#__PURE__*/function (_Modal) {
     }, "\u6210\u90FD\u4E1C\u7AD9"), m("option", {
       value: "nz"
     }, "\u6210\u90FD\u5357\u7AD9"))), m("label", {
+      "class": "label"
+    }, '出发时间'), m("div", {
+      className: "Form-group CreateMatchModal-timeDateGroup"
+    }, m("input", {
+      name: "scheduledLeaveDate",
+      "class": "FormControl",
+      type: "date",
+      min: CurrentDate,
+      value: this.date
+    }), m("input", {
+      name: "scheduledLeaveTime",
+      "class": "FormControl",
+      type: "time",
+      min: CurrentTime,
+      value: this.time
+    })), m("label", {
       className: "label"
-    }, '最长可等待 [单位：分钟,只填数字,最多720]'), m("input", {
+    }, '最长可等待 [单位：分钟,只填数字,最多720]'), m("span", {
+      "class": "input"
+    }, m("input", {
       type: "text",
       "class": "FormControl"
-    })), m("div", {
+    }))), m("div", {
       className: "Form-group"
     }, m("label", {
       className: "label"

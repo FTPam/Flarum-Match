@@ -5,9 +5,20 @@ import Modal from 'flarum/common/components/Modal';
 import Switch from 'flarum/common/components/Switch';
 import Stream from 'flarum/common/utils/Stream';
 
+const CurrentDate = dayjs().format('YYYY-MM-DD');
+const CurrentTime = dayjs().format('HH:mm');
+
 export default class CreateMatchModal extends Modal {
+  loading = false;
+
+  date;
+  time;
+
   oninit(vnode) {
     super.oninit(vnode);
+
+    this.date = CurrentDate;
+    this.time = CurrentTime;
   }
 
   title() {
@@ -46,8 +57,26 @@ export default class CreateMatchModal extends Modal {
                 <option value='nz'>成都南站</option>
               </select>
             </span>
+            <label class="label">{'出发时间'}</label>
+            <div className='Form-group CreateMatchModal-timeDateGroup'>
+              <input
+                name="scheduledLeaveDate"
+                class="FormControl"
+                type="date"
+                min={CurrentDate}
+                value={this.date}
+              />
+              <input
+                name="scheduledLeaveTime"
+                class="FormControl"
+                type="time"
+                min={CurrentTime}
+                value={this.time}/>
+            </div>
             <label className="label">{'最长可等待 [单位：分钟,只填数字,最多720]'}</label>
+            <span class='input'>
             <input type="text" class="FormControl" ></input>
+            </span>
           </div>
 
           <div className="Form-group">
@@ -80,5 +109,6 @@ export default class CreateMatchModal extends Modal {
 
   onsubmit(e) {
     e.preventDefault();
+
   }
 }
