@@ -118,15 +118,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_common_utils_classList__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_common_utils_classList__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var flarum_forum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! flarum/forum/components/DiscussionComposer */ "flarum/forum/components/DiscussionComposer");
 /* harmony import */ var flarum_forum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(flarum_forum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var flarum_components_TextEditor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! flarum/components/TextEditor */ "flarum/components/TextEditor");
+/* harmony import */ var flarum_components_TextEditor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(flarum_components_TextEditor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var flarum_components_TextEditorButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flarum/components/TextEditorButton */ "flarum/components/TextEditorButton");
+/* harmony import */ var flarum_components_TextEditorButton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(flarum_components_TextEditorButton__WEBPACK_IMPORTED_MODULE_5__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module './components/CreateMatchModal'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+
+
 
 
 
 
 flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('tpam/flarum-match', function () {
-  flarum_forum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_3___default.a.prototype.addPoll = function () {
+  flarum_forum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_3___default.a.prototype.addMatch = function () {
     var _this = this;
 
-    flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.modal.show(CreatePollModal, {
+    flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.modal.show(!(function webpackMissingModule() { var e = new Error("Cannot find module './components/CreateMatchModal'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
       poll: this.poll,
       onsubmit: function onsubmit(poll) {
         return _this.poll = poll;
@@ -137,10 +145,20 @@ flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('tpam/f
   Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_forum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_3___default.a.prototype, 'headerItems', function (items) {
     items.add('match', m("a", {
       className: "DiscussionComposer-match",
-      onclick: console.log('a')
+      onclick: this.addMatch.bind(this)
     }, m("span", {
       className: flarum_common_utils_classList__WEBPACK_IMPORTED_MODULE_2___default()('MatchLabel', !this.poll && 'none')
     }, '发起拼车匹配')), 2);
+  });
+  Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_components_TextEditor__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, 'toolbarItems', function (items) {
+    var _this2 = this;
+
+    items.add('mention', m(flarum_components_TextEditorButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      onclick: function onclick() {
+        return _this2.attrs.composer.editor.insertAtCursor(' test');
+      },
+      icon: "fas fa-at"
+    }, flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.translator.trans('flarum-mentions.forum.composer.mention_tooltip')));
   });
 });
 
@@ -165,6 +183,28 @@ module.exports = flarum.core.compat['common/extend'];
 /***/ (function(module, exports) {
 
 module.exports = flarum.core.compat['common/utils/classList'];
+
+/***/ }),
+
+/***/ "flarum/components/TextEditor":
+/*!**************************************************************!*\
+  !*** external "flarum.core.compat['components/TextEditor']" ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/TextEditor'];
+
+/***/ }),
+
+/***/ "flarum/components/TextEditorButton":
+/*!********************************************************************!*\
+  !*** external "flarum.core.compat['components/TextEditorButton']" ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/TextEditorButton'];
 
 /***/ }),
 
