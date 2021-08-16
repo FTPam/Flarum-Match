@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace TPam\FlarumMatch;
+namespace TPam\Match;
 
 use Flarum\Extend;
 
