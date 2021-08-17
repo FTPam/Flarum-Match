@@ -216,13 +216,17 @@ export default class CreateMatchModal extends Modal {
       content: 'content',
       relationships: {
         tags: {
-          data: [{
+          data: {
             type: "tags",
             id: "4" ,
-          }],
+          },
         }
       }
     }
+
+
+
+
     console.log(JSON.stringify(datas))
     app.store
       .createRecord('discussions')
@@ -232,8 +236,7 @@ export default class CreateMatchModal extends Modal {
         m.route.set(app.route.discussion(discussion));
       },);
     console.log(JSON.stringify(datas))
-    DiscussionComposer.close();
-    this.close();
+    app.composer.close()
   }
 }
 
