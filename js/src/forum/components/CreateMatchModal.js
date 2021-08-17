@@ -212,8 +212,8 @@ export default class CreateMatchModal extends Modal {
     console.log('update')
 
     const datas = {
-      title: 'title',
-      content: 'content',
+      title: title,
+      content: content,
       relationships: {
         tags: {
           data: {
