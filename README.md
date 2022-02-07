@@ -1,6 +1,6 @@
 # Match
 
-![License](https://img.shields.io/badge/license-GPL-3.0-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/tpam/flarum-match.svg)](https://packagist.org/packages/tpam/flarum-match) [![Total Downloads](https://img.shields.io/packagist/dt/tpam/flarum-match.svg)](https://packagist.org/packages/tpam/flarum-match)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/tpam/flarum-match.svg)](https://packagist.org/packages/tpam/flarum-match) [![Total Downloads](https://img.shields.io/packagist/dt/tpam/flarum-match.svg)](https://packagist.org/packages/tpam/flarum-match)
 
 A [Flarum](http://flarum.org) extension.   
 西南交通大学拼车匹配。
